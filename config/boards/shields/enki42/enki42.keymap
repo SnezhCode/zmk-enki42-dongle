@@ -111,6 +111,48 @@
 };
 
 / {
+    behaviors {
+        td3: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp I>, <&kp LBKT>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &td3
+            >;
+        };
+    };
+}; 
+
+/ {
+    behaviors {
+        td4: tap_dance_4 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LBRC>, <&kp RBRC>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &td4
+            >;
+        };
+    };
+};
+
+/ {
         keymap {
                 compatible = "zmk,keymap";
 
@@ -121,10 +163,10 @@
 //| LALT/\ |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | RALT/- |
 //                             | RSE | SPC | LWR |   | LWR | BKSP | RSE |
                         bindings = <
-  &mt LWIN RBKT   &kp Q &kp W &kp E &kp R &td0               &kp Y  &kp U  &td2     &kp O   &kp P    &mt RWIN LBKT 
+  &mt TAB RBKT   &kp Q &kp W &kp E &kp R &td0               &kp Y  &kp U  &td2     &kp O   &kp P    &mt RWIN LBKT 
   &mt LCTRL GRAVE &kp A &kp S &kp D &kp F &kp G               &kp H  &kp J  &kp K     &kp L   &kp SEMI &mt RCTRL SQT
   &mt LALT  BSLH  &kp Z &kp X &kp C &kp V &kp B               &kp N  &td1  &kp COMMA &kp DOT &kp FSLH &mt RALT MINUS
-        &lt RSE TAB &mt LSHFT SPACE &lt LWR RET              &lt LWR ESC &mt RSHFT BSPC &lt RSE DEL
+        &lt RSE TAB &mt LSHFT SPACE &lt LWR RET              &lt RSE ESC &mt RSHFT BSPC &lt LWR DEL
                         >;
                 };
                 lower_layer {
@@ -136,7 +178,7 @@
                         bindings = <
  &mt LWIN CAPS   &kp KP_MULTIPLY  &kp N7 &kp N8   &kp N9      &kp PLUS                    &kp EXCL      &kp AT    &kp HASH   &kp DLLR  &kp PRCNT &mt RWIN F1  
  &mt LCTRL K_APP &kp KP_SLASH     &kp N4 &kp N5   &kp N6      &kp MINUS                   &kp CARET     &kp AMPS  &kp STAR   &kp LPAR  &kp RPAR  &mt RALT F2
- &mt LALT EQUAL  &kp N0           &kp N1 &kp N2   &kp N3      &numdot                     &kp LG(SPACE) &kp F4    &kp F5     &kp F6    &kp F7    &mt RALT F3
+ &mt LALT EQUAL  &kp N0           &kp N1 &kp N2   &kp N3      &numdot                     &td4    &kp LG(SPACE)    &none        &none        &none    &mt RALT F3
                                                   &lt ADJ TAB &trans &trans        &trans &trans        &lt ADJ DEL
                         >;
                 };
@@ -160,9 +202,9 @@
 //|pwrOFF|NUMLK|     |     |     |     |   |     |     |     |     |     |      |
 //                   |     |     |     |   |     |     |     |
                         bindings = <
-&bootloader           &none         &none        &none        &none        &none                             &none        &none        &none        &none        &none         &bootloader
-&bt BT_CLR            &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                      &bt BT_SEL 4 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0  &bt BT_CLR
-&ext_power EP_OFF     &kp KP_NUM    &none        &none        &none        &none                             &none        &none        &none        &none        &none         &ext_power EP_OFF 
+&kp F1    &kp F2    &kp F3      &kp F4    &kp F5        &kp F6                                               &kp F7   &kp F8          &kp F9    &kp F10   &kp F11 &kp F12
+&bt BT_CLR            &kp N1    &kp N2    &kp N3      &kp N4    &kp N5                                       &kp N6    &kp N7   &kp N8          &kp N9    &kp N0  &bt BT_CLR
+&ext_power EP_OFF     &kp KP_NUM    &none        &none        &none        &none                             &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4         &ext_power EP_OFF 
                                                               &trans       &none     &trans           &trans &none        &trans
                         >;
                 };
