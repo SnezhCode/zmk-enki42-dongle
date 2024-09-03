@@ -166,7 +166,7 @@
   &mt TAB RBKT   &kp Q &kp W &kp E &kp R &td0               &kp Y  &kp U  &td2     &kp O   &kp P    &mt RWIN LBKT 
   &mt LCTRL GRAVE &kp A &kp S &kp D &kp F &kp G               &kp H  &kp J  &kp K     &kp L   &kp SEMI &mt RCTRL SQT
   &mt LALT  BSLH  &kp Z &kp X &kp C &kp V &kp B               &kp N  &td1  &kp COMMA &kp DOT &kp FSLH &mt RALT MINUS
-        &lt RSE TAB &mt LSHFT SPACE &lt LWR RET              &lt RSE ESC &mt RSHFT BSPC &lt LWR DEL
+        &lt LCTRL TAB &mt LSHFT SPACE &lt LWR RET              &lt RSE ESC &mt RSHFT BSPC &lt LWR DEL
                         >;
                 };
                 lower_layer {
